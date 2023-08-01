@@ -1,4 +1,3 @@
-module.exports = function toReadable (number) {
   let result = "";
     number = String(number);
 
@@ -15,6 +14,11 @@ module.exports = function toReadable (number) {
 
       if (number.length === 3) {
         result = result + arr1[number[0]] + " hundred";
+
+        if (+number[1] === 0) {
+          result = result + " " + arr1[number[2]];
+        }
+
         if (number[1] != 0) {
           if (+number[1] === 1) result = result + " " + arr1[number[1] + number [2]];
 
