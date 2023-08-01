@@ -1,5 +1,5 @@
 module.exports = function toReadable (number) {
-    let result = "";
+  let result = "";
     number = String(number);
 
     arr1 = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"];
@@ -14,9 +14,17 @@ module.exports = function toReadable (number) {
       }
 
       if (number.length === 3) {
-        result = result + arr1[number[0]] + " hundred ";
+        result = result + arr1[number[0]] + " hundred";
+        if (number[1] != 0) {
+          if (+number[1] === 1) result = result + " " + arr1[number[1] + number [2]];
+
+          if (number[1] >= 2) {
+            result = result + " " + arr2[number[1]];
+            if (number[2] != 0) result = result + " " + arr1[number[2]];
+          }
+
+        }
       }
       
-
   return result;
 }
